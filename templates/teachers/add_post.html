@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Должность
+{% endblock %}
+
+{% block head %}
+<h2>Добавление новой должности</h2>
+<p>Введите параметры новой должности в поля формы</p>
+
+{% endblock %}
+
+{% block content %}
+
+{% if name %}
+    <div id="message" class="{{m_type}}">Должность: {{name}} {{message}}</div>
+{% endif %}
+
+<form action="" method="GET">
+    <h3>Название должности</h3>
+    <input type="text" required name="name">
+    <h3>Почасовая ставка должности</h3>
+    <input type="number"  min="0" name="hourly_rate">
+    <input type="submit" class="submit">
+</form>
+{% endblock %}

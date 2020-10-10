@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<h2>Добавление новый предмет</h2>
+<p>Введите данные в поля формы</p>
+{% endblock %}
+
+{% block content %}
+
+{% if fields.1.data %}
+    <div id="message" class="{{m_type}}">Предмет: {{ fields.2.data }} {{message}} <br> Преподаватель: {{ fields.0.data }}</div>
+{% endif %}
+
+<form action="" method="GET">
+    {% for field in fields %}
+
+    <h2>{{ field.name }}</h2>
+    <input type="text" required name="{{ field.id }}">
+
+    {% endfor %}
+    <input type="submit" class="submit">
+</form>
+{% endblock %}

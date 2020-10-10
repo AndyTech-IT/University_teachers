@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <title>{% block title %} Вариант 23 {% endblock %}</title>
+</head>
+<body>
+    <div class="head">
+    {% block head %} 
+
+        <h2>Коковихин Андрей</h2>
+        <p>В соответствие с вариантом задания описать структуру таблиц БД</p>
+        <p>Создать формы для заполнения данными каждой из таблиц </p>
+        <p>Выполнить выборку из базы данных, предусмотреть применение сессий </p>
+        <p>На стартовую страницу сайта вывести свою фамилию, номер варианта и текст задания </p>
+        <p>Применяя для оформления внешнего вида внешний CSS-файл</p>
+
+    {% endblock %}
+    </div>
+    <div class="container"> 
+        <div class="left">
+        {% block left %} 
+            <ul>
+                <li> <a href="{% url 'addteacher' %}">Добавить <em>Преподавателя</em></a> </li>
+                <li> <a href="{% url 'addpost' %}">Добавить <em>Должность</em></a> </li>
+                <li> <a href="{% url 'addthing' %}">Добавить <em>Предмет</em></a> </li>
+                <li> <a href="{% url 'showdata' %}">Вывести данные из базы</a> </li>
+            </ul>
+        {% endblock %}
+        </div>
+        <div class="content">
+            {% block content %} <p class="placeholder">Преподаватели университета</p> {% endblock %}
+        </div>
+    </div>
+    <div class="footer">
+        {% block footer %} <p>Работу выполнил студент группы К 77/2 Коковихин А.В.</p> {% endblock %}
+    </div>
+</body>
+</html>
